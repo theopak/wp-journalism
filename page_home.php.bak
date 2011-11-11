@@ -1,0 +1,53 @@
+<?php
+/*
+ * Template Name: Overview w/ Slider
+ */
+
+get_header();
+
+
+echo "		<section>\n";
+
+
+//all articles, in pages of 5
+//query_posts('posts_per_page=5');
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+query_posts("posts_per_page=5&paged=$paged");
+if(have_posts()) {
+	echo "			<article>\n";
+	while (have_posts()) { the_post();
+		echo "				<article class=\"single\">\n";
+		echo "					<h3><a href=\"";
+		the_permalink();
+		echo "\">";
+		the_title();
+		echo "</a></h3>\n					<div class=\"meta\">";
+		echo "by <em><a class=\"author\" href=\"".get_author_posts_url( get_the_author_meta('ID') )."\">".get_the_author()."</a></em> on <em>";
+		the_time('F j');
+		echo "</em></div>\n					";
+		if(has_post_thumbnail()) {
+			echo "					";
+			the_post_thumbnail();
+			echo "\n";
+		}
+		the_excerpt();
+		echo "				</article>\n";
+	}
+
+	//pagination
+	echo "<div class=\"meta\">";
+	posts_nav_link();
+	echo "</div>";
+
+	echo "			</article>\n";
+} else {
+	_e('Sorry, you have encountered an error.');
+}
+wp_reset_query();
+
+//sidebar
+get_sidebar('Home');
+
+echo "		</section>\n";
+
+get_footer(); ?>

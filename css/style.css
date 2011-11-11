@@ -1,0 +1,941 @@
+/* ====================================================================================================================== *
+ * === Theo Pak | THE MONUMENT, Official School Paper of High Point Regional HS ========================================= *
+ * ====================================================================================================================== *
+ * This style.css uses the excellent reset, font normalization, base styles, and shameless hacks of the HTML5✰Boilerplate *
+ * project. (Mandatory kudos by proxy: yui.yahooapis.com/2.8.1/build/base/base.css, camendesign.com/design/,              *
+ * praegnanz.de/weblog/htmlcssjs-kickstart).                                                                              *
+ * ====================================================================================================================== */
+
+/* html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline) ====================================== *
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark | html5doctor.com/html-5-reset-stylesheet/                     */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, 
+em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, 
+hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; content: none; }
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+table { border-collapse: collapse; border-spacing: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+input, select { vertical-align: middle; }
+
+
+/* Font normalization inspired by YUI Library's fonts.css (developer.yahoo.com/yui/) ==================================== */
+body { font:16px/1.2 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+select, input, textarea, button { font:99% sans-serif; }
+/* Normalize monospace sizing: en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+
+/* Minimal base styles ================================================================================================== */
+html { overflow-y: scroll; } /* Always force a scrollbar in non-IE */
+a:hover, a:active { outline: none; } /* Accessible focus treatment (people.opera.com/patrickl/experiments/keyboard/test) */
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+header nav ul, nav li { margin: 0; list-style:none; list-style-image: none; } /* Remove margins for navigation lists */
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td { vertical-align: top; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; } /* Set sub, sup without   */
+sup { top: -0.5em; }                                             /* affecting line-height: */
+sub { bottom: -0.25em; }                                         /* gist.github.com/413930 */
+pre {
+	white-space: pre; white-space: pre-wrap; word-wrap: break-word; /* www.pathf.com/blogs/2008/05/formatting-quoted- */
+	padding: 15px;                                                  /* code-in-blog-posts-css21-white-space-pre-wrap/ */
+}
+textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+input[type="radio"] { vertical-align: text-bottom; }      /* Align checkboxes, radios,          */
+input[type="checkbox"] { vertical-align: bottom; }        /* text inputs with their             */
+.ie7 input[type="checkbox"] { vertical-align: baseline; } /* label by: Thierry Koblentz         */
+.ie6 input { vertical-align: text-bottom; }               /* tjkdesign.com/ez-css/css/base.css  */
+label, input[type="button"], input[type="submit"], input[type="image"],
+	button { cursor: pointer; } /* Hand cursor on clickable input elements */
+button, input, select, textarea { margin: 0; } /* Webkit browsers add a 2px margin outside the chrome of form elements */
+input:valid, textarea:valid { }   /* Colors for form validity */
+input:invalid, textarea:invalid { border-radius: 1px;
+	-moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; } /* No text-shadow when text is selected:    */
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }      /* twitter.com/miketaylr/status/12228805301 */
+a:link { -webkit-tap-highlight-color: #FF5E99; } /* j.mp/webkit-tap-highlight-color */
+button {  width: auto; overflow: visible; } /* Make button play nice in IE (Vidget Inspire: "...the Button Element...") */
+.ie7 img { -ms-interpolation-mode: bicubic; } /* Bicubic resizing (code.flickr.com/blog: "...Client Side Image Resizing") */
+
+
+/* You might tweak these.. ============================================================================================== */
+body, select, input, textarea {
+	color: #444; /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+	font-family: Georgia, serif; /* base font here, to apply evenly */
+}
+h1, h2, h3, h4, h5, h6 { font-weight: bold; } /* reset headers have no default font-size or margin */
+a { color: #607890; }
+a:hover { color: #036; }
+
+
+/* Primary styles ======================================================================================================= *
+ * Author: Theo Pak (http://theopak.com) ================================================================================ */
+/* global  -------------------------------------------------------------------------------------------------------------- */
+* html, * body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial,sans-serif;
+	color: #333;
+}
+body {
+	width: 100%;
+	min-width: 780px;
+	background-color: #EEE;
+	/* background: url(../img/bg-blur.jpg) repeat center top fixed; */
+	/* background: -moz-linear-gradient(100% 0 90deg, #DDD, white);
+	background: -webkit-gradient(linear, left top, left bottom, from(#DDD), to(white)); */
+}
+h1, h2, h3, h4 {
+	font-family: Georgia,serif;
+}
+header, footer, article, section, aside, figure, hgroup, summary {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+h2 em {
+	font-weight: normal;
+}
+/* #main nav ------------------------------------------------------------------------------------------------------------ */
+#main nav {
+	display: block;
+	margin: 1em 0;
+	padding: 0;
+	width: 100%;
+	background-color: #F2F2F2;
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	border-radius: 3px;
+}
+#main nav ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+#main nav ul li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+#main nav ul a {
+	display: inline-block;
+	margin: 0;
+	padding: 5px 10px;
+	font: bold 9pt/1em Georgia;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #333;
+}
+#main nav ul li.current_page_item a, #main nav ul li.current-cat a {
+	color: #318DC4;
+}
+#main nav ul li a:hover {
+	background-color: #DDD;
+}
+#main nav ul li ul li {
+	margin: 0;
+}
+#main nav ul li ul li a {
+	padding: 1px 14px 1px 18px;
+	font: normal .9em/1em Verdana;
+}
+/* layout --------------------------------------------------------------------------------------------------------------- */
+header, section {
+	margin: 1.5em auto 0;
+	padding: 0;
+	min-width: 780px;
+	max-width: 960px;
+	width: 100%;
+}
+header#head {
+	-webkit-animation: 'scrollin' .3s;
+}
+header h1 {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	width: 540px;
+	height: 80px;
+	font-size: 64px;
+	line-height: 80px;
+}
+header h1 a {
+	margin: 0;
+	padding: 0;
+	width: 540px;
+	height: 80px;
+	text-align: left;
+	font: 64px/80px inherit;
+	color: #333;
+	text-decoration: none;
+	text-shadow: 0 -1pt 0 white;
+	-webkit-transition: all .3s linear;
+}
+header h1 a:hover {
+	color: black;
+	text-shadow: 0 -1pt 3px white;
+}
+header#head div {
+	display: block;
+	float: right;
+	margin: 0;
+	padding: 0;
+	width: 160px;
+}
+header#head ul {
+	display: block;
+	float: right;
+	margin: 0;
+	padding: 0;
+	width: 160px;
+	list-style: none;
+	text-align: left;
+}
+header ul li {
+	margin: 0;
+	padding: 0;
+}
+header ul li a {
+	text-decoration: none;
+	color: #333;
+}
+header ul li.current-menu-item a {
+	font-weight: bold;
+}
+header#head form {
+	display: block;
+	float: right;
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+header#head form #s {
+	width: 160px;
+	border: 1px solid white;
+	background: #F2F2F2 url(../img/silk_magnifier.png) no-repeat right;
+	color: #999;
+}
+#main {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	min-width: 780px;
+	max-width: 960px;
+	width: 100%;
+}
+footer {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 1em 0 1.5em;
+	width: 100%;
+	background-color: #E4E4E4;
+	opacity: .7;
+	background: -moz-linear-gradient(100% 0 90deg, #DDD, white);
+	background: -webkit-gradient(linear, left top, left bottom, from(#F2F2F2), to(white));
+	border-top: 3px solid #333;
+}
+footer>* {
+	margin: 0 auto;
+	padding: 0;
+	min-width: 780px;
+	max-width: 960px;
+	width: 100%;
+}
+footer span {
+	position: relative;
+	display: block;
+	margin: 0 auto 1em;
+	padding: 0;
+	line-height: 50px;
+}
+footer h1 {
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 50%;
+	background: url(../img/logo.png) no-repeat left;
+	line-height: 50px;
+	text-indent: 60px;
+	clear: none;
+}
+footer span a.button {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0 20px;
+	text-decoration: none;
+	line-height: 50px;
+	color: #999;
+}
+footer span a.button:hover {
+	color :#333;
+}
+footer section {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	min-width: 780px;
+	max-width: 960px;
+	width: 100%;
+	border: none;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+}
+footer section h2 {
+	margin: 0;
+	background-color: transparent;
+	border-top: none;
+	border-bottom: 1px solid #999;
+	color: #999;
+	text-shadow: none;
+}
+footer>em {
+	display: block;
+	margin: 0 auto 1.5em;
+	padding: 0;
+	font: normal 1em/1.1em Helvetica,Arial,sans;
+	text-align: justify;
+	color: #333;
+}
+footer p {
+	margin: 0 auto;
+	padding: 0;
+	font: 1em/1.1em inherit;
+	color: #666;
+}
+footer p a {
+	color: #666;
+	text-decoration: none;
+	border-bottom: 1px dotted #666;
+}
+/* content-body --------------------------------------------------------------------------------------------------------- */
+section {
+	position: relative;
+	display: inline-block;
+	margin: 0 0 1.5em;
+	padding: 40px 0 25px;
+	background: #FAFAFA url(../img/bg-white.png) repeat;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+}
+section article {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0 0 1em;
+	min-height: 100px;
+	overflow: hidden;
+}
+section .center {
+	width: 540px;
+}
+section .side {
+	width: 220px;
+}
+section h1 {
+	margin: 0 10px;
+	padding: 0 0 .2em;
+	font: 2.5em/1.2em inherit;
+	text-align: center;
+}
+section h3, #sidebar h3 {
+	margin: 0 40px;
+	padding: 0;
+	font: 2em/1.2em Georgia,"Times New Roman",serif;
+	color: #318DC4; /* guardian.co.uk blue 005689 */
+}
+section h3 a {
+	text-decoration: none;
+	color: #318DC4;
+	-webkit-transition: all .1s linear;
+}
+section h3 a:hover {
+	text-decoration: underline;
+}
+section blockquote {
+	display: block;
+	margin: 0;
+	padding: 1em 1em 1em 2.5em;
+	background-color: #EEE;
+	font-style: italic;
+}
+/* article.single ------------------------------------------------------------------------------------------------------- */
+section article.single {
+	float: none;
+	margin-right: 280px;
+	padding: 0 10px 1.5em 40px;
+}
+article.single h3 {
+	font: 2.2em/1.2em Georgia;
+}
+.meta {
+	margin: 0 40px 1em;
+	font: italic 1em/1.2em Georgia;
+	color: #999;
+}
+.meta em {
+	font-style: normal;
+	color: #333;
+}
+.meta em a.author {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #333;
+}
+.meta a {
+	text-decoration: none;
+	color: #999;
+}
+.meta iframe {
+	float: right;
+	font-size: .8em;
+	line-height: 1em;
+}
+section p {
+	margin: 0 40px;
+	padding: 0;
+}
+a.readmore {
+	padding: 0 18px 0 2px;
+	background: #FFEFDA url(../img/silk_bullet_go.png) no-repeat right;
+	text-decoration: none;
+	border-radius: 2px;
+	color: #666;
+}
+a.readmore:hover {
+	color: #333;
+}
+/* category view -------------------------------------------------------------------------------------------------------- */
+section.featured {
+	padding: 40px;
+	min-width: 700px;
+	max-width: 880px;
+	border-top: 3px solid #333;
+}
+section.featured .newhalf {
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 50%;
+	overflow: hidden;
+}
+section.featured .newhalf article {
+	margin: 0 auto 1em;
+	padding: 5px;
+	background-color: #EEE;
+	width: 380px;
+}
+section.featured .newhalf article * {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+}
+section.featured .newhalf article figure img {
+	-moz-transform: rotate(-15deg) scale(1.5);
+	-webkit-transform: rotate(-15deg) scale(1.5);
+}
+section .half {
+	display: block;
+	padding-top: 10px;
+	width: 50%;
+}
+article.half article {
+	display: block;
+	float: none;
+	margin: 0 20px 1em;
+	padding: 0;
+	min-width: 80px;
+	width: auto;
+	min-height: 0;
+	height: auto;
+	clear: both;
+}
+article article img {
+	display: block;
+	float: left;
+	margin: 0 0 .1em;
+	padding: 0;
+}
+article.half article h3 {
+	margin: 0;
+	padding: 0;
+	font: 1.2em/1em inherit;
+	color: #318DC4;
+}
+article.half .meta {
+	margin: 0;
+	border: none;
+	font-size: .8em;
+}
+article.half article p {
+	margin: 0;
+}
+article.featured h3 {
+	margin: 0 10px;
+	padding: .1em 0 0;
+	line-height: 1em;
+}
+article.featured .meta {
+	margin: 0 10px .2em;
+	border: none;
+	font-size: .8em;
+}
+article.featured figure {
+	margin: 0 10px;
+	padding: 0;
+	max-height: 120px;
+	overflow: hidden;
+}
+article.featured figure img {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	border: none;
+}
+/* single.php ----------------------------------------------------------------------------------------------------------= */
+#main>figure img {
+	min-width: 780px;
+	max-width: 960px;
+	width: 100%;
+	height: auto;
+}
+article.single.post {
+	padding: 0 10px 0 40px;
+}
+article.single h3, article.single .meta, article.single p {
+	margin-left: 0;
+	margin-right: 0;
+}
+article.single.post p {
+	margin: 0 auto 1.25em auto;
+}
+article.single img {
+	max-width: 100%;
+	height: auto;
+}
+article.single a img {
+	border: none;
+}
+article .innersidebar {
+	display: block;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	margin: 0;
+	padding: 0;
+	width: 50px;
+	text-align: right;
+}
+/* sidebar -------------------------------------------------------------------------------------------------------------- */
+#sidebar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	margin: 0;
+	padding: 40px 40px 0 10px;
+	width: 220px;
+}
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#sidebar ul ul {
+	margin: 0 0 0 1.5em;
+	padding: 0;
+	list-style: disc outside none;
+}
+#sidebar>ul>li {
+	margin: 0 0 1.5em;
+	color: #666;
+}
+section h2 {
+	margin: 0 0 5px;
+	padding: 0 0 .2em;
+	border-bottom: 2px solid #333;
+	font: bold .9em/1em Verdana;
+	color: #333;
+	text-shadow: 0 -1px 0 #FFEFDA;
+}
+section h2 a {
+	text-decoration: none;
+	color: #333;
+}
+#sidebar a {
+	text-decoration: none;
+	color: #318DC4;
+}
+#sidebar a:hover {
+	border-bottom: 1px dotted #999;
+}
+#sidebar p {
+	margin: 0;
+	clear: both;
+}
+#sidebar img.author, #sidebar img.avatar {
+	float: left;
+	margin: 0 .3em .1em 0;
+	padding: 1px;
+	height: 50px;
+	background-color: #FAFAFA;
+}
+#sidebar a.author {
+	font: 1.2em/52px Georgia;
+	text-decoration: none;
+	color: #333;
+}
+/* author.php */
+section.author {
+	padding-top: 10px;
+}
+section.author h1 {
+	margin-top: 30px;
+	text-align:left;
+	font-size:1.6em;
+}
+section.author img {
+	float: left;
+	margin: 1em 1.5em 1em 40px;
+	padding: 10px;
+	background-color: #EEE;
+}
+/* comments ------------------------------------------------------------------------------------------------------------= */
+#fbComments {
+	display: block;
+	margin: 1.5em 0 0;
+	padding: 0;
+}
+article.comments p {
+	margin: 0 0 20px;
+	padding: 0;
+}
+#fbComments iframe {
+	margin: 0;
+}
+/* special -------------------------------------------------------------------------------------------------------------- */
+header#global {
+	display: block;
+	margin: 0 auto 2em;
+	padding: 0;
+	max-width: 100%;
+	width: 100%;
+	height: 30px;
+	line-height: 1.4em;
+	background-color: #DDD;
+}
+header#global h1 {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0 0 0 40px;
+	width: 150px;
+	background: url(../img/logo.png) no-repeat left;
+	font: normal 1.5em/30px Georgia;
+	text-transform: none;
+	letter-spacing: 0;
+}
+header#global nav {
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 240px;
+	height: 30px;
+	font: 1.2em/30px Verdana;
+	overflow: hidden;
+	clear: none;
+}
+header#global nav ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+header#global nav ul li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+header#global nav a {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	height: 30px;
+	display: block;
+	text-decoration: none;
+	color: #333;
+}
+header#global form {
+	display: inline;
+	float: right;
+	margin: 0;
+	padding: 0;
+	line-height: 30px;
+}
+header#global form input {
+	display: inline;
+}
+#browser {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+}
+#browser ul {
+	display: block;
+	position: absolute;
+	top: 24px;
+	margin: 0;
+	padding: 0;
+	height: 200px;
+	list-style: none;
+	overflow: auto;
+}
+#browser ul li {
+	margin: 0;
+	padding: 0;
+}
+#browser ul li a {
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: #666;
+	-webkit-transition: all .1s linear;
+}
+#browser ul#categories {
+	left: 0;
+	border-right: 1px solid #CCC;
+}
+#browser ul#categories li a {
+	padding: .2em 10px .2em 10px;
+	width: 150px;
+	font: 1em/1em Verdana;
+	text-align: right;
+}
+#browser ul#categories li.current_page_item a, #browser ul#categories li.current-cat a, #browser ul#categories li a:hover {
+	text-shadow: 0 -1px 0 #F2F2F2;
+	color: #333;
+}
+#browser ul#articles {
+	left: 171px;
+	padding: 0 10px;
+	width: 340px;
+}
+#browser ul#articles li:hover {
+	margin-bottom: -1px;
+	border-bottom: 1px dotted #999;
+}
+#browser ul#articles li:hover h3 {
+	font-weight: bold;
+}
+#browser ul#articles h3 {
+	display: inline;
+	margin: 0;
+	font: 1.5em/1.3em inherit;
+}
+#browser ul#articles small {
+	display: inline;
+	font: italic .8em/1.3em inherit;
+	color: #999;
+}
+#browser ul#articles small em {
+	font-style: normal;
+	text-transform: uppercase;
+	color: #333;
+}
+#browser div {
+	display: block;
+	margin: 0 0 0 521px;
+	padding: 5px 10px;
+	height: 200px;
+}
+/* Nivo Slider ---------------------------------------------------------------------------------------------------------- */
+aside#intro {
+	display: block;
+	margin: 0 auto 1em;
+	padding: 0;
+	height: 350px;
+	min-width: 780px;
+	max-width: 960px;
+	width: 100%;
+	background-color: #FAFAFA;
+	overflow: hidden;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 6px;
+	-webkit-animation: 'fadein' .3s;
+}
+aside#intro h3 {
+	margin: 0;
+}
+aside#intro img {
+	width: 100%;
+	min-height: 350px;
+	height: auto;
+}
+aside#intro a img {
+	border: none;
+}
+.nivoSlider {
+	position:relative;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:60;
+	display:none;
+}
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:50;
+	height:100%;
+}
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	opacity:0.8; /* Overridden by captionOpacity setting */
+	width:100%;
+	z-index:89;
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+}
+.nivo-caption a {
+	display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+.nivo-directionNav a {
+	position: absolute;
+	top: 45%;
+	display: block;
+	width: 30px;
+	height: 30px;
+	background: url(../img/arrows.png) no-repeat;
+	text-indent: -9999px;
+	border: 0;
+	z-index: 99;
+	cursor: pointer;
+}
+.nivo-prevNav {
+	left: 15px;
+}
+.nivo-nextNav {
+	right: 15px;
+	background-position: -30px 0 !important;
+}
+.nivo-controlNav {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.nivo-controlNav a {
+	position:relative;
+	display: block;
+	float: left;
+	margin-right: 3px;
+	width: 22px;
+	height: 22px;
+	background:url(../img/bullets.png) no-repeat;
+	text-indent: -9999px;
+	z-index:99;
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	background-position:0 -22px;
+	font-weight:bold;
+}
+/* animations ----------------------------------------------------------------------------------------------------------- */
+@-webkit-keyframes 'fadein' {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-webkit-keyframes 'scrollin' {
+	0% { opacity: 0;  bottom: 40px; -webkit-animation-timing-function: ease-out; }
+	65% { opacity: 0; bottom: 15px; }
+	100% { opacity: 1; bottom:0px; -webkit-animation-timing-function: ease-out; }
+}
+
+
+/* Non-semantic helper classes: please define your styles before this section. ========================================== */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; /* For image replacement */
+	text-align: left; direction: ltr; }
+.hidden { display: none; visibility: hidden; } /* Hide for both screenreaders and browsers ("Screenreader Visibility") */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; /* Hide only visually, but have it available */
+	overflow: hidden; padding: 0; position: absolute; width: 1px; }          /* for screenreaders: by Jon Neal            */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { 
+	clip: auto;height: auto; margin: 0; overflow: visible; /* Extends .visuallyhidden  to allow the element to be focused */
+	position: static; width: auto; }                       /* when navigated to via keyboard (drupal.org/node/897638)     */
+.invisible { visibility: hidden; } /* Hide visually and from screenreaders, but maintain layout */
+.clearfix:before, .clearfix:after { content: "\0020"; /* The Magnificent Clearfix: Updated to prevent margin-collapsing */
+	display: block; height: 0; overflow: hidden; }    /* on child elements. - j.mp/bestclearfix                         */
+.clearfix:after { clear: both; }                      /* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/   */
+.clearfix { zoom: 1; }                                /* tickets/5-extra-margin-padding-bottom-of-page                  */
+
+
+/* Media queries for responsive design. ================================================================================= *
+ * These follow after primary styles so they will successfully override.                                                  */
+@media all and (orientation:portrait) { /* Style adjustments for portrait mode goes here */ }
+@media all and (orientation:landscape) { /* Style adjustments for landscape mode goes here */ }
+@media screen and (max-device-width: 480px) {
+	/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome) consider this: *
+	 * www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/                          */
+	/* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
+	/* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+/* Print styles. ======================================================================================================== *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/                                */
+@media print {
+	* { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+	-ms-filter: none !important; } /* Black prints fastest (sanbeiji.com/archives/953) */
+	a, a:visited { color: #444 !important; text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, /* Don't show links for images  */
+		a[href^="#"]:after { content: ""; }    /* or javascript/internal links */
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+	tr, img { page-break-inside: avoid; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3{ page-break-after: avoid; }
+}
