@@ -21,4 +21,4 @@ Components of this project are used in accordance with their respective licenses
 * 2011 MAR 02 - [The Monument Online](http://monument.hpregional.org) is the first website to use an early version of this theme.
 * 2011 MAR 23 - A revised version of the theme fixes presentation and javascript bugs. The wp authors.php page is modified.
 * 2011 AUG 01 - The HTML5 Boilerplate project now optimizes the CSS and JS files. The theme's file structure reflects this.
-* 2011 NOV 11 - Licensing clarified and Github repo opened.
+* 2011 NOV 11 - Licensing clarified and Github repo opened. Theme sanitized.

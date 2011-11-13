@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]>	<html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7 ]>		<html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8 ]>		<html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
 <!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>"><!-- utf-8, I would hope -->
@@ -27,17 +29,23 @@
 		//}
 	?>" />
 	<meta name="keywords" content="">
-	<meta name="geo.region" content="US-NJ">
-	<meta name="author" content="Theo Pak">
 
+	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/apple-touch-icon.png">
+	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> - RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 
-	<link rel="stylesheet" href="css/style.css?v=2">
+	<!-- CSS: implied media=all -->
+	<!-- CSS concatenated and minified via ant build script-->
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/942f797f865d0a7fde40d035f6642a42436c0b00.css
+">
+	<!-- end CSS-->
+
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/libs/modernizr-2.0.6.min.js"></script>
 
 	<?php wp_head(); ?>
