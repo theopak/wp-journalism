@@ -1,18 +1,26 @@
 <?php
 
+/**
+ * single.php
+ * 
+ * @package WordPress
+ * @subpackage wp-journalism
+ */
+
 get_header();
 
-//WP loop to display a single post
+// WP loop to display a single post
 if(have_posts()) {
 	while (have_posts()) { the_post();
-		//featured image, if applicable, goes before everything
+	
+		// featured image, if applicable, goes before everything
 		if(has_post_thumbnail()) {
 			echo "		<figure>";
 			the_post_thumbnail('featured');
 			echo "</figure>";
 		}
 
-		//open section
+		// open section
 		echo "		<section>\n";
 
 		echo "		<article class=\"single post\" id=\"post-";
@@ -35,7 +43,7 @@ if(have_posts()) {
 		the_content();
 		echo "\n		</article>";
 
-		//comments
+		// comments
 		echo "		<article class=\"single post comments\" id=\"comments-";
 		the_ID();
 		echo "\">\n";
@@ -46,13 +54,13 @@ if(have_posts()) {
 		}
 		echo "\n		</article>\n";
 
-		//sidebar
+		// sidebar
 		?>
 			<div id="sidebar">
 				<ul>
 					<li>
 						<h2>About The Author</h2>
-						<?php echo get_avatar($author,50); ?>
+						<?php echo get_avatar( get_the_author_meta('ID'), 50 ); ?>
 						<a class="author" href="<?php echo get_author_posts_url( get_the_author_meta('ID') ); ?>"><?php 
 							echo get_the_author(); ?></a>
 						<p><?php echo the_author_meta('description'); ?></p>
@@ -69,8 +77,9 @@ if(have_posts()) {
 			</div>
 		<?php
 
-		//close section
+		// close section
 		echo "\n		</section>\n";
+
 	}
 } else {
 	_e('<section><h3>Sorry, you have encountered an error.</h3></section>');

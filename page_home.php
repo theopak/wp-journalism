@@ -1,11 +1,16 @@
 <?php
-/*
+
+/**
+ * page_home.php
  * Template Name: Overview w/ Slider
+ * 
+ * @package WordPress
+ * @subpackage wp-journalism
  */
 
 get_header();
 
-//intro (cat #45 'featured')
+// introduce the 'Featured' catagory of posts (cat #45 in this installation)
 $feat_query = new WP_Query();
 $feat_query->query(array(
 	'category_name'		=>	'featured',
@@ -38,7 +43,7 @@ wp_reset_query();
 
 echo "		<section>\n";
 
-//all articles, in pages of 5
+// display all articles, in pages of 5
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $wp_query = new WP_Query();
 $wp_query->query(array(
@@ -47,6 +52,7 @@ $wp_query->query(array(
 	'paged'				=>	$paged
 ));
 if($wp_query->have_posts()) {
+	
 	echo "			<article>\n";
 	while ($wp_query->have_posts()) { $wp_query->the_post();
 		$cat = get_the_category();
@@ -72,17 +78,20 @@ if($wp_query->have_posts()) {
 		echo "				</article>\n";
 	}
 
-	//pagination
+	// pagination
 	echo "<div class=\"meta\">";
 	posts_nav_link();
 	echo "</div>";
 
 	echo "			</article>\n";
 
+	// sidebar
 	get_sidebar('Home');
+	
 } else {
 	_e('Sorry, you have encountered an error.');
 }
+
 wp_reset_query();
 
 echo "		</section>\n";

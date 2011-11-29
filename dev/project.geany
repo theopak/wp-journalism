@@ -17,15 +17,14 @@ long_line_behaviour=1
 long_line_column=78
 
 [files]
-current_page=7
-FILE_NAME_0=0;HTML;0;16;1;1;1;/home/pakt/git/wp-journalism/index.html;0;4
-FILE_NAME_1=138;CSS;0;16;1;1;1;/home/pakt/git/wp-journalism/style.css;0;4
-FILE_NAME_2=0;CSS;0;16;1;1;1;/home/pakt/git/wp-journalism/css/style.css;0;4
-FILE_NAME_3=1230;Markdown;0;16;1;1;1;/home/pakt/git/wp-journalism/README.md;0;4
-FILE_NAME_4=0;PHP;0;16;1;1;1;/home/pakt/git/wp-journalism/page_home.php;0;4
-FILE_NAME_5=0;PHP;0;16;1;1;1;/home/pakt/git/wp-journalism/author.php;0;4
-FILE_NAME_6=1615;PHP;0;16;1;1;1;/home/pakt/git/wp-journalism/header.php;0;4
-FILE_NAME_7=2031;PHP;0;16;1;1;1;/home/pakt/git/wp-journalism/footer.php;0;4
+current_page=2
+FILE_NAME_0=138;CSS;0;16;1;1;1;/home/pakt/git/wp-journalism/style.css;0;4
+FILE_NAME_1=482;CSS;0;16;1;1;1;/home/pakt/git/wp-journalism/css/style.css;0;4
+FILE_NAME_2=1247;Markdown;0;16;1;1;1;/home/pakt/git/wp-journalism/README.md;0;4
+FILE_NAME_3=0;PHP;0;16;1;1;1;/home/pakt/git/wp-journalism/page_home.php;0;4
+FILE_NAME_4=0;PHP;0;16;1;1;1;/home/pakt/git/wp-journalism/author.php;0;4
+FILE_NAME_5=1934;PHP;0;16;1;1;1;/home/pakt/git/wp-journalism/header.php;0;4
+FILE_NAME_6=1733;PHP;0;16;1;1;1;/home/pakt/git/wp-journalism/footer.php;0;4
 
 [VTE]
 last_dir=/home/pakt/Dropbox/classes_2011-fall/csci-1100_comp-sci/2011-10-13_ref-vars

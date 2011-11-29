@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * author.php
+ * 
+ * @package WordPress
+ * @subpackage wp-journalism
+ */
+
 get_header();
 
-//start the loop so the author hooks can be used
+// start the loop so the author hooks can be used
 if(have_posts()) {
 	the_post();
 		echo "		<section class=\"author\">\n			";
@@ -14,11 +21,11 @@ if(have_posts()) {
 		echo "		</section>\n";
 }
 
-//reset for a new author loop
+// reset for a new author loop
 rewind_posts();
 get_template_part('loop','author');
 
-//display all posts by this author
+// display all posts by this author
 echo "		<section>\n";
 if(have_posts()) {
 	echo "			<h2 style=\"margin: 0 280px 0 40px;\">All Posts by ".get_the_author()."</h2>\n";
@@ -46,7 +53,7 @@ if(have_posts()) {
 } else {
 	_e('Sorry, you have encountered an error.');
 }
-get_sidebar('Home'); //standard sidebar, don't forget it
+get_sidebar('Home');
 echo "		</section>\n";
 
 get_footer();

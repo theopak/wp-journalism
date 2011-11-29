@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * header.php
+ * 
+ * @package WordPress
+ * @subpackage wp-journalism
+ */
+
+?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
@@ -7,6 +17,9 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>"><!-- utf-8, I would hope -->
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		More info: h5bp.com/b/378 -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<title><?php

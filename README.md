@@ -22,3 +22,4 @@ Components of this project are used in accordance with their respective licenses
 * 2011 MAR 23 - A revised version of the theme fixes presentation and javascript bugs. The wp authors.php page is modified.
 * 2011 AUG 01 - The HTML5 Boilerplate project now optimizes the CSS and JS files. The theme's file structure reflects this.
 * 2011 NOV 11 - Licensing clarified and Github repo opened. Theme sanitized.
+* 2011 NOV 29 - Frontend code reorganized, restructured to be more managable. Gravatar bug on single.php fixed. Increased conformity to Wordpress theme standards.

@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * footer.php
+ * 
+ * @package WordPress
+ * @subpackage wp-journalism
+ */
+
+?>
 	</div>
 	<footer>
 		<span>
